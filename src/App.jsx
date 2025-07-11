@@ -7,7 +7,7 @@ import Login from "./pages/Login";
 import Body from "./components/Body";
 import Feed from "./pages/Feed";
 import Profile from "./pages/Profile";
-import Connections from "./pages/connections";
+import Connections from "./pages/Connections";
 import Requests from "./pages/Requests";
 import RequestsSent from "./pages/RequestsSent";
 import IgnoredProfiles from "./pages/IgnoredProfiles";
