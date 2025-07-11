@@ -2,6 +2,7 @@ import { useState } from "react";
 import UserCard from "../components/FeedCard";
 import axios from "axios";
 import { useDispatch } from "react-redux";
+import { BASE_URL } from "../constants";
 
 
 const EditProfile = ({ user }) => {
@@ -16,7 +17,7 @@ const EditProfile = ({ user }) => {
 
     const saveProfile = async () => {
         try {
-            const res = await axios.patch("http://localhost:7777/profile/edit",
+            const res = await axios.patch(BASE_URL + "/profile/edit",
                 {
                     firstName,
                     lastName,

@@ -6,6 +6,8 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { BASE_URL } from "../constants";
+
 const Body = () => {
     const navigate = useNavigate();
 
@@ -13,7 +15,7 @@ const Body = () => {
 
     const userDetails = async () => {
         try {
-            const res = await axios.get("http://localhost:7777/profile/view", {
+            const res = await axios.get(BASE_URL + "/profile/view", {
                 withCredentials: true
             });
             dispatch(addUser(res.data));

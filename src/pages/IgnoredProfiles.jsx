@@ -4,13 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { addIgnoredProfiles } from "../utils/store/ignoredProfilesSlice";
 import UserCard from "../components/UserCard";
 import Empty from "../components/Empty";
+import { BASE_URL } from "../constants";
 
 const IgnoredProfiles = () => {
     const dispatch = useDispatch();
 
     const fetchIgnoredProfiles = async () => {
         try {
-            const res = await axios.get("http://localhost:7777/user/ignoredProfiles", {
+            const res = await axios.get(BASE_URL + "/user/ignoredProfiles", {
                 withCredentials: true
             });
             dispatch(addIgnoredProfiles(res?.data));

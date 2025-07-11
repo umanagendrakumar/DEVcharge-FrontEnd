@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addRequestsSent } from "../utils/store/requestsSentSlice";
 import UserCard from "../components/UserCard";
 import Empty from "../components/Empty";
+import { BASE_URL } from "../constants";
 
 const RequestsSent = () => {
 
@@ -12,7 +13,7 @@ const RequestsSent = () => {
 
     const fetchRequestSent = async () => {
         try {
-            const res = await axios.get("http://localhost:7777/user/request/sent", {
+            const res = await axios.get(BASE_URL + "/user/request/sent", {
                 withCredentials: true
             });
             dispatch(addRequestsSent(res?.data));

@@ -15,6 +15,7 @@ import { removeFeed } from "../utils/store/feedSlice";
 import { removeConnections } from "../utils/store/connectionsSlice";
 import { removeRequests } from "../utils/store/requestsSlice";
 import { removeIgnoredProfiles } from "../utils/store/ignoredProfilesSlice";
+import { BASE_URL } from "../constants";
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,7 +30,7 @@ const Header = () => {
 
     const handleLogout = async () => {
         try {
-            await axios.post("http://localhost:7777/logout", {}, {
+            await axios.post(BASE_URL + "/logout", {}, {
                 withCredentials: true
             });
             dispatch(removeUser());

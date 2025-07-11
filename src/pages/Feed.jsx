@@ -4,6 +4,7 @@ import { addFeed } from "../utils/store/feedSlice";
 import { useEffect } from "react";
 import FeedCard from "../components/FeedCard";
 import Empty from "../components/Empty";
+import { BASE_URL } from "../constants";
 
 const Feed = () => {
 
@@ -12,7 +13,7 @@ const Feed = () => {
     const getfeed = async () => {
         if (feed) return; //if feed is already present in store, do nothing.
         try { //else add data to store.
-            const res = await axios.get("http://localhost:7777/user/feed", {
+            const res = await axios.get(BASE_URL + "/user/feed", {
                 withCredentials: true
             });
             console.log(res);

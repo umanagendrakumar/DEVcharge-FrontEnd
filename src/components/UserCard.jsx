@@ -4,6 +4,7 @@ import { FaCheck, FaTimes } from 'react-icons/fa';
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { removeProcessedRequest } from "../utils/store/requestsSlice";
+import { BASE_URL } from "../constants";
 
 const UserCard = ({ user, isRequestsReceived, isConnections }) => {
 
@@ -17,7 +18,7 @@ const UserCard = ({ user, isRequestsReceived, isConnections }) => {
     const dispatch = useDispatch();
 
     const reviewRequest = async (review) => {
-        const res = await axios.post("http://localhost:7777/request/review/" + review + "/" + requestId,
+        const res = await axios.post(BASE_URL + "/request/review/" + review + "/" + requestId,
             {},
             {
                 withCredentials: true

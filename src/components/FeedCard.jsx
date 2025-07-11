@@ -2,6 +2,7 @@ import axios from "axios";
 
 import { removeUserFromFeed } from "../utils/store/feedSlice";
 import { useDispatch } from "react-redux";
+import { BASE_URL } from "../constants";
 
 const FeedCard = ({ user }) => {
     const { firstName, lastName, age, gender, skills, about, _id } = user;
@@ -9,8 +10,7 @@ const FeedCard = ({ user }) => {
     const dispatch = useDispatch();
 
     const handleRequest = async (status) => {
-        const res = await axios.post(
-            "http://localhost:7777/request/send/" + status + "/" + _id,
+        const res = await axios.post(BASE_URL + "/request/send/" + status + "/" + _id,
             {},
             { withCredentials: true }
         );
