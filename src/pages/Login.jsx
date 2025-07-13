@@ -29,7 +29,7 @@ const Login = () => {
                 }
             );
             dispatch(addUser(res.data));
-            return navigate("/");
+            return navigate("/feed");
         }
         catch (err) {
             setErrorMessage(err?.response?.data || "Something went wrong!");
@@ -64,7 +64,7 @@ const Login = () => {
     }
 
     return (
-        <div className="border rounded p-8 bg-black mx-auto w-full max-w-120">
+        <div className=" rounded p-8 bg-black mx-auto w-full max-w-120">
 
             <div>
                 <h2 className="mt-4 text-sm">EmailId :</h2>
@@ -115,12 +115,12 @@ const Login = () => {
 
             <div className="text-center font-bold text-red-400 mt-4">{errorMessage}</div>
 
-            <button className="mt-6 border px-4 py-1 rounded cursor-pointer hover:bg-base-300"
+            <button className="mt-6 px-6 py-2 rounded cursor-pointer bg-primary hover:bg-base-300"
                 onClick={isNewUser ? handleSignUp : handleLogin}>
                 {isNewUser ? "SignUp" : "Login"}
             </button>
 
-            <p className="text-right text-sm cursor-pointer"
+            <p className="text-right  text-sm font-medium cursor-pointer"
                 onClick={setToggle}>
                 {isNewUser ? "Already have an account" : "I'm a New User"}
             </p>
