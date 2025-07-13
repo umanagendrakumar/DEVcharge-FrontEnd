@@ -21,10 +21,10 @@ const Body = () => {
             dispatch(addUser(res.data));
         }
         catch (err) {
-            if (err.status === 401) {
-                navigate("/login")
+            if (err?.status === 401) {
+                navigate("/")
             }
-            console.log(err);
+            // console.log(err.status);
         }
     };
     useEffect(() => {
@@ -34,7 +34,7 @@ const Body = () => {
     return (
         <>
             <Header />
-            <main className=" flex-1 flex justify-center items-center p-4">
+            <main className=" bg-black flex-1 flex justify-center items-center p-4">
                 <Outlet />
             </main>
         </>
