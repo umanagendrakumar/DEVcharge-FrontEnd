@@ -31,17 +31,16 @@ const EditProfile = ({ user }) => {
                     withCredentials: true
                 }
             );
-            console.log(res)
         }
         catch (err) {
             console.log(err);
         }
-
+        
     }
 
     return (
         <div className="p-2 w-full flex flex-col-reverse gap-8 justify-center items-center lg:flex-row ">
-            <div className="border rounded p-8 bg-black w-full max-w-md">
+            <div className=" rounded p-8 bg-black w-full max-w-md">
                 <div className="mb-4">
                     <h2>FirstName :</h2>
                     <input
@@ -106,7 +105,7 @@ const EditProfile = ({ user }) => {
                         className="border mt-1 p-2 w-full" />
                 </div>
 
-                <button className="mt-8 border px-4 py-1 rounded cursor-pointer hover:bg-base-300"
+                <button className="mt-8 px-6 py-2 rounded cursor-pointer bg-primary hover:bg-base-300"
                     onClick={saveProfile}>
                     Save
                 </button>
