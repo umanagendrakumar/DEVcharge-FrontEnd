@@ -1,20 +1,24 @@
 import { RiMenuUnfold2Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
-const SideBar = ({closeMenu}) => {
+
+const SideBar = ({ closeMenu }) => {
     const sideBarItem = "hover:bg-gray-800 w-full border-t border-gray-500 py-2";
+
     return (
-        <aside className="bg-base-100 z-10 text-right absolute left-0 top-0 p-4 pt-6"
-        onClick={closeMenu}>
+        <aside className="bg-black z-10 text-right absolute left-0 top-0 p-4 pt-6"
+            onClick={closeMenu}>
             <button className="mb-4 text-2xl cursor-pointer"><RiMenuUnfold2Line /></button>
             <ul className=" text-lg">
-                <li className={sideBarItem}><Link to="/">Home</Link></li>
+                <li className={sideBarItem}><Link to="/feed">Home</Link></li>
                 <li className={sideBarItem}><Link to="/profile/edit">Profile</Link></li>
                 <li className={sideBarItem}><Link to="/user/connections">Connections</Link></li>
                 <li className={sideBarItem}><Link to="/user/requests">Requests Received</Link></li>
                 <li className={sideBarItem}><Link to="/user/request/sent">Requests Sent</Link></li>
                 <li className={`${sideBarItem} border-b`}><Link to="/user/ignoredProfiles">Ignored Profiles</Link></li>
             </ul>
+
         </aside>
     )
 }
