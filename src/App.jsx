@@ -11,6 +11,7 @@ import Connections from "./pages/Connections";
 import Requests from "./pages/Requests";
 import RequestsSent from "./pages/RequestsSent";
 import IgnoredProfiles from "./pages/IgnoredProfiles";
+import LandingPage from "./pages/LandingPage";
 
 const App = () => {
     return (
@@ -18,7 +19,8 @@ const App = () => {
             <BrowserRouter basename="/">
                 <Routes>
                     <Route path="/" element={<Body />}>
-                        <Route path="/" element={<Feed />}></Route>
+                        <Route path="/" element={<LandingPage />}></Route>
+                        <Route path="/feed" element={<Feed />}></Route>
                         <Route path="/login" element={<Login />}></Route>
                         <Route path="/profile/edit" element={<Profile />}></Route>
                         <Route path="/user/connections" element={<Connections />}></Route>
