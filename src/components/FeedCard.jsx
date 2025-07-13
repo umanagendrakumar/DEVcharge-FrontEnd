@@ -4,6 +4,8 @@ import { removeUserFromFeed } from "../utils/store/feedSlice";
 import { useDispatch } from "react-redux";
 import { BASE_URL } from "../constants";
 
+
+
 const FeedCard = ({ user }) => {
     const { firstName, lastName, age, gender, skills, about, _id } = user;
 
@@ -18,24 +20,25 @@ const FeedCard = ({ user }) => {
     }
     
     return (
-        <article className="bg-black w-full rounded max-w-sm flex flex-col text-center pb-2">
-            <figure>
+        <article className=" bg-base-300 p-4 w-full rounded-xl max-w-md flex flex-col text-center pb-2">
+            <figure className=" w-45 h-45 rounded-full mx-auto my-4">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpjRkfdV2CW7Sg2sT7e3zRmUyUUIOh5IW0bw&s"
                     alt="userPhoto"
-                    className="rounded-t w-full" />
+                    className="w-full h-full rounded-full" />
             </figure>
-            <header className="my-2 ml-4">
-                <h2 className="font-bold text-xl">{firstName + " " + lastName}</h2>
+            <header className="my-2">
+                <h2 className="font-bold text-2xl">{firstName + " " + lastName}</h2>
                 {gender && age && <p className="text-sm mb-2">{gender + ", " + age}</p>}
-                <p>{about}</p>
+                <p className="text-sm">{about}</p>
                 {skills && <p className="mb-2">{skills.join(" | ")}</p>}
             </header>
             <footer className="ml-4">
-                <button className=" border px-4 py-2 cursor-pointer hover:text-red-500 m-1"
+                <button className=" rounded px-6 py-3 cursor-pointer w-25 bg-black hover:text-red-500 m-1"
                     onClick={() => handleRequest("ignore")}>
-                    Ignore
+                    Ignore 
+                    
                 </button>
-                <button className=" border px-4 py-2 cursor-pointer hover:text-green-500 m-1"
+                <button className=" rounded px-6 py-3 cursor-pointer bg-black hover:text-green-500 m-1"
                     onClick={() => handleRequest("interested")}>
                     Interested
                 </button>
