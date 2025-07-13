@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { RiMenuUnfoldLine } from "react-icons/ri";
 import { RiLogoutCircleRLine } from "react-icons/ri";
 import photo from "../assets/Photo.png";
@@ -38,7 +37,7 @@ const Header = () => {
             dispatch(removeConnections());
             dispatch(removeRequests());
             dispatch(removeIgnoredProfiles());
-            return navigate("/login");
+            return navigate("/");
 
         }
         catch (err) {
@@ -52,36 +51,40 @@ const Header = () => {
 
     return (
         <>
-            <header className=" bg-black p-4 sticky top-0 h-20 flex items-center">
+            <header className=" bg-base-300 p-4 sticky top-0 h-20 flex items-center">
                 <nav className="w-full flex justify-between items-center">
 
                     {isMenuOpen && <SideBar closeMenu={() => setIsMenuOpen(false)} />}
 
-                    <button aria-label="Open menu"
-                        className="text-2xl cursor-pointer relative"
-                        onClick={setMenu}
-                    >
-                        <RiMenuUnfoldLine />
-                    </button>
+                    {
+                        user && (
+                            <button aria-label="Open menu"
+                                className="text-2xl cursor-pointer relative"
+                                onClick={setMenu}
+                            >
+                                <RiMenuUnfoldLine />
+                            </button>
+                        )
+                    }
 
 
-                    <h1 className="font-bold text-xl">
-                        <Link to="/">DEVcharge</Link>
+                    <h1 className="font-bold text-3xl mx-auto">
+                        DevCharge
                     </h1>
 
-                    <div className="flex gap-2 ">
-
-                        <button onClick={navigateToProfile}>
-                            {
-                                user && <img src={photo} alt="User Profile" className="rounded-[50%] w-8 cursor-pointer" />
-                            }
-                        </button>
-                        <button
-                            className="cursor-pointer text-xl"
-                            onClick={handleLogout}>
-                            <RiLogoutCircleRLine />
-                        </button>
-                    </div>
+                    {
+                        user && (<div className="flex gap-2 ">
+                            <button onClick={navigateToProfile}>
+                                <img src={photo} alt="User Profile" className="rounded-[50%] w-8 cursor-pointer" />
+                            </button>
+                            <button
+                                className="cursor-pointer text-xl"
+                                onClick={handleLogout}>
+                                <RiLogoutCircleRLine />
+                            </button>
+                        </div>
+                        )
+                    }
 
                 </nav>
             </header>
