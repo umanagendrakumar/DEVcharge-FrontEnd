@@ -19,7 +19,6 @@ const Body = () => {
                 withCredentials: true
             });
             dispatch(addUser(res.data));
-            navigate("/feed"); // when we visit app if user already logged in yesterday then he redirects to feed page.
 
         }
         catch (err) {
