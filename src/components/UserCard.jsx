@@ -30,7 +30,7 @@ const UserCard = ({ user, isRequestsReceived, isConnections }) => {
     };
 
     return (
-        <div className=" border bg-black rounded p-4 m-2 max-w-2xl w-full flex gap-4 items-center">
+        <div className=" bg-base-300 hover:bg-black rounded p-4 m-1 max-w-2xl w-full flex gap-4 items-center">
             <img src={Photo}
                 alt="connectionPhoto"
                 className="border w-12 rounded-2xl" />
