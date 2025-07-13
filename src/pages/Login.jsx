@@ -32,7 +32,7 @@ const Login = () => {
             return navigate("/feed");
         }
         catch (err) {
-            setErrorMessage(err?.response?.data || "Something went wrong!");
+            setErrorMessage(err?.response?.data || "Something went wrong! Refresh the page!!");
         }
     }
     const handleSignUp = async () => {
