@@ -1,4 +1,4 @@
-import Photo from "../assets/Photo.png";
+// import Photo from "../assets/Photo.png";
 
 import { FaCheck, FaTimes } from 'react-icons/fa';
 import axios from "axios";
@@ -31,9 +31,9 @@ const UserCard = ({ user, isRequestsReceived, isConnections }) => {
 
     return (
         <div className=" bg-base-300 hover:bg-black rounded p-4 m-1 max-w-2xl w-full flex gap-4 items-center">
-            <img src={Photo}
+            <img src={photoUrl}
                 alt="connectionPhoto"
-                className="border w-12 rounded-2xl" />
+                className=" w-14 h-14 rounded-[50%]" />
             <div className=" flex-1">
                 <h2 className="font-bold text-xl">{firstName + " " + lastName}</h2>
                 {!isConnections && age && gender && <h2 className="text-sm mb-2">{age + ", " + gender}</h2>}
