@@ -1,6 +1,5 @@
 import { RiMenuUnfoldLine } from "react-icons/ri";
 import { RiLogoutCircleRLine } from "react-icons/ri";
-import photo from "../assets/Photo.png";
 import { useState } from "react";
 
 import SideBar from "./SideBar";
@@ -75,7 +74,7 @@ const Header = () => {
                     {
                         user && (<div className="flex gap-2 ">
                             <button onClick={navigateToProfile}>
-                                <img src={photo} alt="User Profile" className="rounded-[50%] w-8 cursor-pointer" />
+                                <img src={user.photoUrl} alt="User Profile" className="rounded-[50%] w-8 h-8 cursor-pointer" />
                             </button>
                             <button
                                 className="cursor-pointer text-xl"
