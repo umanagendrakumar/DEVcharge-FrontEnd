@@ -16,7 +16,7 @@ const LandingHero = () => {
                 </p>
 
 
-                <Link to="/login" className=" w-40 sm:w-50 bg-primary py-4 rounded flex items-center justify-center cursor-pointer mx-auto">
+                <Link to="/auth" className=" w-40 sm:w-50 bg-primary py-4 rounded flex items-center justify-center cursor-pointer mx-auto">
                     GET STARTED
                     <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                 </Link>
