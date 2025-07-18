@@ -30,15 +30,23 @@ const Body = () => {
     };
     useEffect(() => {
         userDetails();
+        const setRealVh = () => {
+            const vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        };
+
+        setRealVh();
+        window.addEventListener('resize', setRealVh);
+        return () => window.removeEventListener('resize', setRealVh);
     }, []);
 
     return (
-        <>
+        <div className="flex flex-col min-h-[calc(var(--vh,1vh)*100)]">
             <Header />
-            <main className=" bg-black flex-1 flex justify-center items-center p-4">
+            <main className="bg-black flex-1 flex justify-center items-center p-4">
                 <Outlet />
             </main>
-        </>
+        </div>
     );
 };
 
