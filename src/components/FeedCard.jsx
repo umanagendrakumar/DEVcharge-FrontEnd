@@ -4,10 +4,8 @@ import { removeUserFromFeed } from "../utils/store/feedSlice";
 import { useDispatch } from "react-redux";
 import { BASE_URL } from "../constants";
 
-
-
 const FeedCard = ({ user }) => {
-    const { firstName, lastName, age, gender, skills, about, _id } = user;
+    const { firstName, lastName, age, gender, skills, about, _id, photoUrl } = user;
 
     const dispatch = useDispatch();
 
@@ -22,8 +20,7 @@ const FeedCard = ({ user }) => {
     return (
         <article className=" bg-base-300 p-4 w-full rounded-xl max-w-md flex flex-col text-center pb-2">
             <figure className=" w-45 h-45 rounded-full mx-auto my-4">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpjRkfdV2CW7Sg2sT7e3zRmUyUUIOh5IW0bw&s"
-                    alt="userPhoto"
+                <img src={photoUrl}
                     className="w-full h-full rounded-full" />
             </figure>
             <header className="my-2">
