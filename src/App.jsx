@@ -26,7 +26,7 @@ const App = () => {
                             </PublicOnlyRoute>
                         }></Route>
                         <Route path="/feed" element={<Feed />}></Route>
-                        <Route path="/login" element={
+                        <Route path="/auth" element={
                             <PublicOnlyRoute>
                                 <Login />
                             </PublicOnlyRoute>
