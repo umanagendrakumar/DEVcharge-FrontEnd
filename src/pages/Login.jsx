@@ -13,6 +13,7 @@ const Login = () => {
     const [lastName, setLastName] = useState("");
     const [errorMessage, setErrorMessage] = useState();
     const [isNewUser, setIsNewUser] = useState(false);
+    const [isPasswordForgot, setIsPasswordForgot] = useState(false);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -58,13 +59,32 @@ const Login = () => {
             setErrorMessage(err?.response?.data || "Something went wrong!");
         }
     }
+    const handleForgotPassword = async () => {
+        try {
+            const res = await axios.patch(BASE_URL + "/profile/edit/password", {
+                emailId,
+                newPassword: password,
+                confirmNewPassword: confirmPassword
+            },
+                {
+                    withCredentials: true
+                }
+            );
+        } catch (err) {
+            setErrorMessage(err?.response?.data || "Something went wrong!");
+        }
+    }
 
     const setToggle = () => {
         setIsNewUser(!isNewUser);
     }
 
+    const passwordForgot = () => {
+        setIsPasswordForgot(true);
+    }
+
     return (
-        <div className=" rounded p-8 bg-black mx-auto w-full max-w-120">
+        <div className="rounded p-8 bg-black mx-auto w-full max-w-120">
 
             <div>
                 <h2 className="mt-4 text-sm">EmailId :</h2>
@@ -83,9 +103,9 @@ const Login = () => {
                     className="border mt-2 p-2 w-full" />
             </div>
 
-            {isNewUser && (
-                <>
 
+            {
+                isNewUser || isPasswordForgot && (
                     <div>
                         <h2 className="mt-4 text-sm">Confirm Password :</h2>
                         <input
@@ -94,36 +114,57 @@ const Login = () => {
                             onChange={(e) => setConfirmPassword(e.target.value)}
                             className="border mt-2 p-2 w-full" />
                     </div>
-                    <div>
-                        <h2 className="mt-4 text-sm">FirstName :</h2>
-                        <input type="text"
-                            value={firstName}
-                            onChange={(e) => setFirstName(e.target.value)}
-                            className="border mt-2 p-2 w-full" />
+                )
+            }
+
+            {
+                isNewUser && (
+                    <>
+                        <div>
+                            <h2 className="mt-4 text-sm">FirstName :</h2>
+                            <input type="text"
+                                value={firstName}
+                                onChange={(e) => setFirstName(e.target.value)}
+                                className="border mt-2 p-2 w-full" />
+                        </div>
+                        <div>
+                            <h2 className="mt-4 text-sm">LastName :</h2>
+                            <input type="text"
+                                value={lastName}
+                                onChange={(e) => setLastName(e.target.value)}
+                                className="border mt-2 p-2 w-full" />
+                        </div>
+                    </>
+                )
+            }
+
+            {
+                !isNewUser && !isPasswordForgot && (
+                    <div className="text-right mt-1 text-sm cursor-pointer"
+                        onClick={passwordForgot}>
+                        Forgot Password
                     </div>
-                    <div>
-                        <h2 className="mt-4 text-sm">LastName :</h2>
-                        <input type="text"
-                            value={lastName}
-                            onChange={(e) => setLastName(e.target.value)}
-                            className="border mt-2 p-2 w-full" />
-                    </div>
-                </>
-            )}
+                )
+            }
 
-
-
-            <div className="text-center font-bold text-red-400 mt-4">{errorMessage}</div>
+            <div className="text-center text-red-400 mt-4">{errorMessage}</div>
 
             <button className="mt-6 px-6 py-2 rounded cursor-pointer bg-primary hover:bg-base-300"
-                onClick={isNewUser ? handleSignUp : handleLogin}>
-                {isNewUser ? "SignUp" : "Login"}
+                onClick={isNewUser ? handleSignUp : (isPasswordForgot ? handleForgotPassword : handleLogin)}>
+                {isNewUser ? "SignUp" : (isPasswordForgot ? "Update" : "Login")}
             </button>
 
-            <p className="text-right  text-sm font-medium cursor-pointer"
-                onClick={setToggle}>
-                {isNewUser ? "Already have an account" : "I'm a New User"}
-            </p>
+            {
+                !isPasswordForgot && (
+                    <p className="text-right  text-sm font-medium cursor-pointer"
+                        onClick={setToggle}>
+                        {isNewUser ? "Already have an account" : "I'm a New User"}
+                    </p>
+                )
+            }
+
+
+
         </div>
     );
 
