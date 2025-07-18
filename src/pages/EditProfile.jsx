@@ -1,5 +1,5 @@
 import { useState } from "react";
-import UserCard from "../components/FeedCard";
+import FeedCard from "../components/FeedCard";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { BASE_URL } from "../constants";
@@ -11,9 +11,10 @@ const EditProfile = ({ user }) => {
     const [lastName, setLastName] = useState(user.lastName);
     const [age, setAge] = useState(user.age || "");
     const [gender, setGender] = useState(user.gender || "");
-    const [photoURL, setPhotoURL] = useState(user.photoURL);
+    const [photoUrl, setPhotoUrl] = useState(user.photoUrl || "");
     const [about, setAbout] = useState(user.about);
     const [skills, setSkills] = useState(user.skills);
+    const [errorMessage, setErrorMessage] = useState("");
 
     const dispatch = useDispatch();
 
@@ -25,7 +26,7 @@ const EditProfile = ({ user }) => {
                     lastName,
                     age,
                     gender,
-                    photoURL,
+                    photoUrl,
                     about,
                     skills,
                 },
@@ -34,11 +35,13 @@ const EditProfile = ({ user }) => {
                 }
             );
             dispatch(addUser(res?.data));
+            setErrorMessage("");
+            alert("Profile updated successfully!");
         }
         catch (err) {
-            console.log(err);
+            setErrorMessage(err?.response?.data);
         }
-        
+
     }
 
     return (
@@ -84,9 +87,9 @@ const EditProfile = ({ user }) => {
                     <h2 >PhotoURL :</h2>
                     <input
                         type="text"
-                        name="photoURL"
-                        value={photoURL}
-                        onChange={(e) => setPhotoURL(e.target.value)}
+                        name="photoUrl"
+                        value={photoUrl}
+                        onChange={(e) => setPhotoUrl(e.target.value)}
                         className="border mt-1 p-2 w-full" />
                 </div>
                 <div className="mb-4">
@@ -108,13 +111,16 @@ const EditProfile = ({ user }) => {
                         className="border mt-1 p-2 w-full" />
                 </div>
 
+                <div className="text-center text-red-400 mt-4">{errorMessage}</div>
+
+
                 <button className="mt-8 px-6 py-2 rounded cursor-pointer bg-primary hover:bg-base-300"
                     onClick={saveProfile}>
                     Save
                 </button>
             </div>
             <div className="w-full max-w-sm">
-                <UserCard user={user} />
+                <FeedCard user={user} />
             </div>
         </div>
     );
