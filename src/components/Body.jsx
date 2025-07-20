@@ -43,7 +43,7 @@ const Body = () => {
     return (
         <div className="flex flex-col min-h-[calc(var(--vh,1vh)*100)]">
             <Header />
-            <main className="bg-black flex-1 flex justify-center items-center p-4">
+            <main className=" bg-black flex-1 flex justify-center items-center p-2">
                 <Outlet />
             </main>
         </div>

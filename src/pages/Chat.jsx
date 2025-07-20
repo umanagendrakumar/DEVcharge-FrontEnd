@@ -108,19 +108,19 @@ const Chat = () => {
     };
 
     return (
-        <div className="border border-gray-700 w-[70vw] h-[70vh] flex flex-col rounded">
+        <div className="border border-gray-700 w-full sm:w-[70vw] h-[70vh] flex flex-col rounded">
             <header className="border-b border-b-gray-700 h-14 flex items-center justify-center text-xl font-bold">Charging Space</header>
             <main className="flex-1 p-2 overflow-y-scroll">
                 {
                     messages.map((msg, index) => {
                         return (
-                            <div key={index} className="chat chat-start">
-                                <div className="chat-image avatar">
+                            <div key={index} className="chat chat-start mb-4 z-10">
+                                <div className="chat-image">
                                     <div className="w-10 rounded-full">
-
                                         <img
                                             alt="Tailwind CSS chat bubble component"
                                             src={msg.photoUrl}
+                                            className="rounded-full"
                                         />
                                     </div>
                                 </div>
@@ -128,7 +128,7 @@ const Chat = () => {
                                     {`${msg.firstName} ${msg.lastName}`}
                                     <time className="text-xs opacity-50">{msg.time}</time>
                                 </div>
-                                <div className="chat-bubble">{msg.text}</div>
+                                <div className="bg-base-300 py-2 px-4 rounded">{msg.text}</div>
                                 {/* <div className="chat-footer opacity-50">Delivered</div> */}
                             </div>
 
@@ -144,7 +144,7 @@ const Chat = () => {
                     type="text"
                     value={newMessage}
                     onChange={(e) => setNewMessage(e.target.value)}
-                    className="p-2 px-6 flex-1 outline-0 rounded-xl border border-gray-700"
+                    className="p-2 px-6 flex-1 outline-0 rounded-xl border border-gray-700 w-full"
                     placeholder="Fuel your DevCharge, start typing…....." />
                 <button className="btn bg-primary rounded-xl"
                     onClick={sendMessage}>Send</button>
