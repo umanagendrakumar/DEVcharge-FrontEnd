@@ -108,7 +108,7 @@ const Chat = () => {
     };
 
     return (
-        <div className="border border-gray-700 w-full sm:w-[70vw] h-[70vh] flex flex-col rounded">
+        <div className="border border-gray-700 w-full md:w-3xl h-[90vh] md:h-[80vh] flex flex-col rounded">
             <header className="border-b border-b-gray-700 h-14 flex items-center justify-center text-xl font-bold">Charging Space</header>
             <main className="flex-1 p-2 overflow-y-scroll">
                 {
@@ -139,14 +139,14 @@ const Chat = () => {
                  <div ref={messagesEndRef} />
 
             </main >
-            <footer className="h-14 flex items-center gap-2 p-4">
+            <footer className="h-14 flex items-center gap-2 p-2">
                 <input
                     type="text"
                     value={newMessage}
                     onChange={(e) => setNewMessage(e.target.value)}
-                    className="p-2 px-6 flex-1 outline-0 rounded-xl border border-gray-700 w-full"
+                    className="p-2 px-6 h-12 flex-1 outline-0 rounded-xl border border-gray-700 w-full"
                     placeholder="Fuel your DevCharge, start typing…....." />
-                <button className="btn bg-primary rounded-xl"
+                <button className="btn bg-primary rounded-xl h-12"
                     onClick={sendMessage}>Send</button>
             </footer>
 
