@@ -33,7 +33,7 @@ const Login = () => {
             return navigate("/feed");
         }
         catch (err) {
-            setErrorMessage(err?.response?.data || "Something went wrong! Refresh the page!!");
+            setErrorMessage(err?.response?.data || "Something went wrong! Refresh page 2 times!!");
         }
     }
     const handleSignUp = async () => {
@@ -56,7 +56,7 @@ const Login = () => {
             dispatch(addUser(res?.data?.data));
             navigate("/profile/edit")
         } catch (err) {
-            setErrorMessage(err?.response?.data || "Something went wrong!");
+            setErrorMessage(err?.response?.data || "Something went wrong! Refresh page 2 times!!");
         }
     }
     const handleForgotPassword = async () => {
@@ -71,7 +71,7 @@ const Login = () => {
                 }
             );
         } catch (err) {
-            setErrorMessage(err?.response?.data || "Something went wrong!");
+            setErrorMessage(err?.response?.data || "Something went wrong! Refresh page 2 times!!");
         }
     }
 
