@@ -50,7 +50,7 @@ const Header = () => {
 
     return (
         <>
-            <header className=" bg-base-300 p-4 sticky top-0 h-20 flex items-center">
+            <header className=" bg-base-300 p-4 sticky top-0 h-[8vh] flex items-center">
                 <nav className="w-full flex justify-between items-center">
 
                     {isMenuOpen && <SideBar closeMenu={() => setIsMenuOpen(false)} />}
@@ -67,7 +67,7 @@ const Header = () => {
                     }
 
 
-                    <h1 className="font-bold text-3xl mx-auto">
+                    <h1 className="font-bold text-2xl sm:text-3xl mx-auto">
                         DevCharge
                     </h1>
 
