@@ -15,10 +15,13 @@ const EditProfile = ({ user }) => {
     const [about, setAbout] = useState(user.about);
     const [skills, setSkills] = useState(user.skills);
     const [errorMessage, setErrorMessage] = useState("");
+    const [isSaving, setIsSaving] = useState(false);
+
 
     const dispatch = useDispatch();
 
     const saveProfile = async () => {
+        setIsSaving(true);
         try {
             const res = await axios.put(BASE_URL + "/profile/edit",
                 {
@@ -36,10 +39,11 @@ const EditProfile = ({ user }) => {
             );
             dispatch(addUser(res?.data));
             setErrorMessage("");
-            alert("Profile updated successfully!");
+            setIsSaving(false);
         }
         catch (err) {
             setErrorMessage(err?.response?.data);
+            setIsSaving(false);
         }
 
     }
@@ -116,6 +120,7 @@ const EditProfile = ({ user }) => {
 
                 <button className="mt-8 px-6 py-2 rounded cursor-pointer bg-primary hover:bg-base-300"
                     onClick={saveProfile}>
+                    <span className={`${isSaving ? "loading loading-dots loading-xs mr-1" : ""}`}></span>
                     Save
                 </button>
             </div>
