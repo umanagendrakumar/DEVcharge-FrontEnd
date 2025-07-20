@@ -14,12 +14,15 @@ const Login = () => {
     const [errorMessage, setErrorMessage] = useState();
     const [isNewUser, setIsNewUser] = useState(false);
     const [isPasswordForgot, setIsPasswordForgot] = useState(false);
+
+    const [isProcessing, setIsProcessing] = useState(false);
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const handleLogin = async () => {
+        setIsProcessing(true);
         try {
-
             const res = await axios.post(BASE_URL + "/login",
                 {
                     emailId,
@@ -29,14 +32,17 @@ const Login = () => {
                     withCredentials: true
                 }
             );
+            setIsProcessing(false);
             dispatch(addUser(res.data));
             return navigate("/feed");
         }
         catch (err) {
             setErrorMessage(err?.response?.data || "Something went wrong! Refresh page 2 times!!");
+            setIsProcessing(false);
         }
     }
     const handleSignUp = async () => {
+        setIsProcessing(true);
         try {
             if (password !== confirmPassword) {
                 setErrorMessage("Passwords do not match!");
@@ -53,13 +59,16 @@ const Login = () => {
                     withCredentials: true
                 }
             );
+            setIsProcessing(false);
             dispatch(addUser(res?.data?.data));
             navigate("/profile/edit")
         } catch (err) {
             setErrorMessage(err?.response?.data || "Something went wrong! Refresh page 2 times!!");
+            setIsProcessing(false);
         }
     }
     const handleForgotPassword = async () => {
+        setIsProcessing(true);
         try {
             const res = await axios.patch(BASE_URL + "/profile/edit/password", {
                 emailId,
@@ -70,22 +79,25 @@ const Login = () => {
                     withCredentials: true
                 }
             );
+            setIsProcessing(false);
         } catch (err) {
             setErrorMessage(err?.response?.data || "Something went wrong! Refresh page 2 times!!");
+            setIsProcessing(false);
         }
     }
 
     const setToggle = () => {
+        setErrorMessage("")
         setIsNewUser(!isNewUser);
     }
 
     const passwordForgot = () => {
+        setErrorMessage("");
         setIsPasswordForgot(true);
     }
 
     return (
-        <div className="rounded p-8 bg-black mx-auto w-full max-w-120">
-
+        <div className=" rounded p-8 bg-black mx-auto w-full max-w-120">
             <div>
                 <h2 className="mt-4 text-sm">EmailId :</h2>
                 <input
@@ -140,7 +152,7 @@ const Login = () => {
 
             {
                 !isNewUser && !isPasswordForgot && (
-                    <div className="text-right mt-1 text-sm cursor-pointer"
+                    <div className="text-right mt-1 w-max ml-auto text-sm cursor-pointer"
                         onClick={passwordForgot}>
                         Forgot Password
                     </div>
@@ -149,17 +161,20 @@ const Login = () => {
 
             <div className="text-center text-red-400 mt-4">{errorMessage}</div>
 
-            <button className="mt-6 px-6 py-2 rounded cursor-pointer bg-primary hover:bg-base-300"
+            <button className="mt-2 px-6 py-2 rounded cursor-pointer bg-primary hover:bg-base-300"
                 onClick={isNewUser ? handleSignUp : (isPasswordForgot ? handleForgotPassword : handleLogin)}>
+
+                <span className={`${isProcessing ? "loading loading-dots loading-xs mr-1" : ""}`}></span>
                 {isNewUser ? "SignUp" : (isPasswordForgot ? "Update" : "Login")}
+
             </button>
 
             {
                 !isPasswordForgot && (
-                    <p className="text-right  text-sm font-medium cursor-pointer"
+                    <div className="text-right w-max ml-auto text-sm font-medium cursor-pointer"
                         onClick={setToggle}>
                         {isNewUser ? "Already have an account" : "I'm a New User"}
-                    </p>
+                    </div>
                 )
             }
 
