@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { createSocketConnection } from "../utils/socket";
@@ -10,10 +10,19 @@ const Chat = () => {
     const [messages, setMessages] = useState([]);
     const [newMessage, setNewMessage] = useState("");
 
+    const socketRef = useRef(null); //holds the socket instance
+
     const user = useSelector((store) => store.user);
     const userId = user?._id;
 
     const navigate = useNavigate();
+
+    const messagesEndRef = useRef(null);
+
+    useEffect(() => {
+        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, [messages]);
+
 
     const getIndianTime = (mongooseDate) => {
 
@@ -50,7 +59,7 @@ const Chat = () => {
         } catch (err) {
             navigate("/user/connections");
         }
-        
+
     }
 
     useEffect(() => {
@@ -60,12 +69,23 @@ const Chat = () => {
 
     useEffect(() => {
         if (!userId) return
+
         const socket = createSocketConnection();
+        socketRef.current = socket; // save to ref
+
         socket.emit("joinChat", { userId, targetUserId });
 
         socket.on("receiveMessage", ({ firstName, lastName, photoUrl, text }) => {
-            // console.log("Message received:", firstName, text);
-            setMessages((messages) => [...messages, { firstName, lastName, photoUrl, text }]);
+
+            const now = new Date();
+            const time = now.toLocaleString("en-IN", {
+                timeZone: "Asia/Kolkata",
+                hour12: false,
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit",
+            });
+            setMessages((messages) => [...messages, { firstName, lastName, photoUrl, text, time }]);
         });
 
         return () => {
@@ -74,9 +94,9 @@ const Chat = () => {
     }, [userId, targetUserId]);
 
     const sendMessage = () => {
-        const socket = createSocketConnection();
+        if (!newMessage.trim()) return;
 
-        socket.emit("sendMessage", {
+        socketRef.current?.emit("sendMessage", {
             text: newMessage,
             userId,
             targetUserId,
@@ -116,6 +136,7 @@ const Chat = () => {
                         );
                     })
                 }
+                 <div ref={messagesEndRef} />
 
             </main >
             <footer className="h-14 flex items-center gap-2 p-4">
