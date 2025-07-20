@@ -108,7 +108,7 @@ const Chat = () => {
     };
 
     return (
-        <div className="border border-gray-700 w-full md:w-3xl h-[85vh] md:h-[70vh]  flex flex-col rounded">
+        <div className="border border-gray-700 w-full md:w-3xl h-[80vh] md:h-[70vh]  flex flex-col rounded">
             <header className="border-b border-b-gray-700 h-14 flex items-center justify-center text-xl font-bold">Charging Space</header>
             <main className="flex-1 p-2 overflow-y-scroll">
                 {
