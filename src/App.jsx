@@ -12,6 +12,8 @@ import Requests from "./pages/Requests";
 import RequestsSent from "./pages/RequestsSent";
 import IgnoredProfiles from "./pages/IgnoredProfiles";
 import LandingPage from "./pages/LandingPage";
+import Chat from "./pages/Chat";
+
 import { PublicOnlyRoute } from "./Helpers";
 
 const App = () => {
@@ -36,6 +38,7 @@ const App = () => {
                         <Route path="/user/requests" element={<Requests />}></Route>
                         <Route path="/user/request/sent" element={<RequestsSent />}></Route>
                         <Route path="/user/ignoredProfiles" element={<IgnoredProfiles />}></Route>
+                        <Route path="/chat/:targetUserId" element={<Chat />}></Route>
                     </Route>
                 </Routes>
             </BrowserRouter>
