@@ -54,7 +54,7 @@ const EditProfile = ({ user }) => {
                         name="firstName"
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}
-                        className="border mt-2 p-2 w-full" />
+                        className="border mt-2 p-2 w-full outline-0" />
                 </div>
                 <div className="mb-4">
                     <h2>LastName :</h2>
@@ -63,7 +63,7 @@ const EditProfile = ({ user }) => {
                         name="lastName"
                         value={lastName}
                         onChange={(e) => setLastName(e.target.value)}
-                        className="border mt-1 p-2 w-full" />
+                        className="border mt-1 p-2 w-full outline-0" />
                 </div>
                 <div className="mb-4">
                     <h2 >Age :</h2>
@@ -72,7 +72,7 @@ const EditProfile = ({ user }) => {
                         name="age"
                         value={age}
                         onChange={(e) => setAge(e.target.value)}
-                        className="border mt-1 p-2 w-full" />
+                        className="border mt-1 p-2 w-full outline-0" />
                 </div>
                 <div className="mb-4">
                     <h2 >Gender :</h2>
@@ -81,7 +81,7 @@ const EditProfile = ({ user }) => {
                         name="gender"
                         value={gender}
                         onChange={(e) => setGender(e.target.value)}
-                        className="border mt-1 p-2 w-full" />
+                        className="border mt-1 p-2 w-full outline-0" />
                 </div>
                 <div className="mb-4">
                     <h2 >PhotoURL :</h2>
@@ -90,7 +90,7 @@ const EditProfile = ({ user }) => {
                         name="photoUrl"
                         value={photoUrl}
                         onChange={(e) => setPhotoUrl(e.target.value)}
-                        className="border mt-1 p-2 w-full" />
+                        className="border mt-1 p-2 w-full outline-0" />
                 </div>
                 <div className="mb-4">
                     <h2 >About :</h2>
@@ -99,7 +99,7 @@ const EditProfile = ({ user }) => {
                         name="about"
                         value={about}
                         onChange={(e) => setAbout(e.target.value)}
-                        className="border mt-1 p-2 w-full" />
+                        className="border mt-1 p-2 w-full outline-0" />
                 </div>
                 <div>
                     <h2 >Skills :</h2>
@@ -108,7 +108,7 @@ const EditProfile = ({ user }) => {
                         name="skills"
                         value={skills}
                         onChange={(e) => setSkills(e.target.value)}
-                        className="border mt-1 p-2 w-full" />
+                        className="border mt-1 p-2 w-full outline-0" />
                 </div>
 
                 <div className="text-center text-red-400 mt-4">{errorMessage}</div>
