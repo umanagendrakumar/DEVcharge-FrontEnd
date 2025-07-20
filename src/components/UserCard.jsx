@@ -8,10 +8,8 @@ import { BASE_URL } from "../constants";
 
 const UserCard = ({ user, isRequestsReceived, isConnections }) => {
 
-    let { firstName, lastName, age, gender, skills, about, photoUrl } = user.fromId;
-    if (typeof user.toId === "object") {
-        ({ firstName, lastName, age, gender, skills, about, photoUrl } = user.toId);
-    }
+    const profile = typeof user.fromId === "object" ? user.fromId : user.toId;
+    const { firstName, lastName, age, gender, skills, about, photoUrl } = profile;
 
     const requestId = user._id;
 
@@ -24,13 +22,13 @@ const UserCard = ({ user, isRequestsReceived, isConnections }) => {
                 withCredentials: true
             }
         );
-       
+
         dispatch(removeProcessedRequest(requestId));
 
     };
 
     return (
-        <div className=" bg-base-300 hover:bg-black rounded p-4 m-1 max-w-2xl w-full flex gap-4 items-center">
+        <div className="bg-base-300 hover:bg-black rounded p-4 m-1 max-w-2xl w-full flex gap-4 items-center">
             <img src={photoUrl}
                 alt="connectionPhoto"
                 className=" w-14 h-14 rounded-[50%]" />
