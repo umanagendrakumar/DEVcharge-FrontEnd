@@ -104,7 +104,7 @@ const Login = () => {
                     type="email"
                     value={emailId}
                     onChange={(e) => setEmailId(e.target.value)}
-                    className="border mt-2 p-2 w-full" />
+                    className="border mt-2 p-2 w-full focus:border-blue-500 focus:outline-none " />
             </div>
             <div>
                 <h2 className="mt-4 text-sm">Password :</h2>
@@ -112,7 +112,7 @@ const Login = () => {
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="border mt-2 p-2 w-full" />
+                    className="border mt-2 p-2 w-full focus:border-blue-500 focus:outline-none" />
             </div>
 
 
@@ -124,7 +124,7 @@ const Login = () => {
                             type="password"
                             value={confirmPassword}
                             onChange={(e) => setConfirmPassword(e.target.value)}
-                            className="border mt-2 p-2 w-full" />
+                            className="border mt-2 p-2 w-full focus:border-blue-500 focus:outline-none" />
                     </div>
                 )
             }
@@ -137,14 +137,14 @@ const Login = () => {
                             <input type="text"
                                 value={firstName}
                                 onChange={(e) => setFirstName(e.target.value)}
-                                className="border mt-2 p-2 w-full" />
+                                className="border mt-2 p-2 w-full focus:border-blue-500 focus:outline-none" />
                         </div>
                         <div>
                             <h2 className="mt-4 text-sm">LastName :</h2>
                             <input type="text"
                                 value={lastName}
                                 onChange={(e) => setLastName(e.target.value)}
-                                className="border mt-2 p-2 w-full" />
+                                className="border mt-2 p-2 w-full focus:border-blue-500 focus:outline-none" />
                         </div>
                     </>
                 )
@@ -161,10 +161,10 @@ const Login = () => {
 
             <div className="text-center text-red-400 mt-4">{errorMessage}</div>
 
-            <button className="mt-2 px-6 py-2 rounded cursor-pointer bg-primary hover:bg-base-300"
+            <button className="mt-2 px-6 py-2 rounded cursor-pointer bg-gradient-to-r from-[#905ef2] via-[#3e68f2] to-[#03d9ff]"
                 onClick={isNewUser ? handleSignUp : (isPasswordForgot ? handleForgotPassword : handleLogin)}>
 
-                <span className={`${isProcessing ? "loading loading-dots loading-xs mr-1" : ""}`}></span>
+                <span className={`${isProcessing ? "loading loading-dots loading-xs mr-1 " : ""}`}></span>
                 {isNewUser ? "SignUp" : (isPasswordForgot ? "Update" : "Login")}
 
             </button>

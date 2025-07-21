@@ -67,7 +67,8 @@ const Header = () => {
                     }
 
 
-                    <h1 className="font-bold text-2xl sm:text-3xl mx-auto">
+
+                    <h1 className="font-bold text-2xl sm:text-3xl mx-auto text-transparent bg-clip-text bg-gradient-to-r from-[#ffffff] via-[#00ccff] to-[#00fff7]">
                         DevCharge
                     </h1>
 

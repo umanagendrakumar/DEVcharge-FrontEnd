@@ -5,7 +5,7 @@ const LandingHero = () => {
     return (
         <section>
             <div className="text-center">
-                <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                <h1 className="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#ffffff] via-[#00ccff] to-[#00fff7]">
                     <span>Connect.</span>{" "}
                     <span>Collaborate.</span>{" "}
                     <span>Grow.</span>
@@ -16,7 +16,7 @@ const LandingHero = () => {
                 </p>
 
 
-                <Link to="/auth" className=" w-40 sm:w-50 bg-primary py-4 rounded flex items-center justify-center cursor-pointer mx-auto">
+                <Link to="/auth" className=" w-40 sm:w-50 bg-gradient-to-r from-[#9766fa] via-[#3764f9] to-[#0edbff] py-4 rounded flex items-center justify-center cursor-pointer mx-auto">
                     GET STARTED
                     <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                 </Link>
