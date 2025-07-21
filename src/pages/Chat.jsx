@@ -107,6 +107,7 @@ const Chat = () => {
         setNewMessage("");
     };
 
+
     return (
         <div className="border border-gray-700 w-full md:w-3xl h-[80vh] md:h-[70vh]  flex flex-col rounded">
             <header className="border-b border-b-gray-700 h-14 flex items-center justify-center text-xl font-bold">Charging Station</header>
@@ -114,7 +115,11 @@ const Chat = () => {
                 {
                     messages.map((msg, index) => {
                         return (
-                            <div key={index} className="chat chat-start mb-4 z-10">
+
+                            <div key={index} className={
+                                "chat mb-4 " +
+                                (user?.firstName === msg.firstName ? "chat-end" : "chat-start")
+                            }>
                                 <div className="chat-image ">
                                     <div className="w-8 h-8 rounded-full">
                                         <img
@@ -129,14 +134,13 @@ const Chat = () => {
                                     <time className="text-xs opacity-50">{msg.time}</time>
                                 </div>
                                 <div className="bg-base-300 py-2 px-4 rounded max-w-[50%]">{msg.text}</div>
-                                {/* <div className="chat-footer opacity-50">Delivered</div> */}
                             </div>
 
 
                         );
                     })
                 }
-                 <div ref={messagesEndRef} />
+                <div ref={messagesEndRef} />
 
             </main >
             <footer className="h-14 flex items-center gap-2 p-2">
