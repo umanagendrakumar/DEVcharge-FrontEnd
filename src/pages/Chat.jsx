@@ -133,7 +133,7 @@ const Chat = () => {
                                     {`${msg.firstName} ${msg.lastName}`}
                                     <time className="text-xs opacity-50">{msg.time}</time>
                                 </div>
-                                <div className="bg-base-300 py-2 px-4 rounded max-w-[50%]">{msg.text}</div>
+                                <div className="bg-base-300 py-2 px-4 rounded max-w-[75%] w-full">{msg.text}</div>
                             </div>
 
 
