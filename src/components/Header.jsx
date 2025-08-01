@@ -27,20 +27,23 @@ const Header = () => {
     const dispatch = useDispatch();
 
     const handleLogout = async () => {
-        try {
-            await axios.post(BASE_URL + "/logout", {}, {
-                withCredentials: true
-            });
-            dispatch(removeUser());
-            dispatch(removeFeed());
-            dispatch(removeConnections());
-            dispatch(removeRequests());
-            dispatch(removeIgnoredProfiles());
-            return navigate("/");
+        const result = confirm("Are you sure you want to logout?");
+        if (result) {
+            try {
+                await axios.post(BASE_URL + "/logout", {}, {
+                    withCredentials: true
+                });
+                dispatch(removeUser());
+                dispatch(removeFeed());
+                dispatch(removeConnections());
+                dispatch(removeRequests());
+                dispatch(removeIgnoredProfiles());
+                return navigate("/");
 
-        }
-        catch (err) {
-            console.log(err);
+            }
+            catch (err) {
+                console.log(err);
+            }
         }
     };
 
