@@ -53,7 +53,7 @@ const Header = () => {
 
     return (
         <>
-            <header className=" bg-base-300 p-4 sticky top-0 h-20 flex items-center">
+            <header className=" bg-base-100 p-4 sticky top-0 h-20 flex items-center">
                 <nav className="w-full flex justify-between items-center">
 
                     {isMenuOpen && <SideBar closeMenu={() => setIsMenuOpen(false)} />}
