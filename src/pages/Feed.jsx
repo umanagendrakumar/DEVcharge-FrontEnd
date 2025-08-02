@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import FeedCard from "../components/FeedCard";
 import Empty from "../components/Empty";
 import { BASE_URL } from "../constants";
+import ShimmerFeed from "./ShimmerFeed";
 
 const Feed = () => {
 
@@ -27,7 +28,7 @@ const Feed = () => {
         getfeed();
     }, [])
 
-    if (!feed) return <h1>Loading Feed....</h1>
+    if (!feed) return <ShimmerFeed />
     if (feed.length === 0) return <Empty value={"more Profile Cards"}/>
     return (
         <div className=" w-full p-2 flex flex-col justify-center items-center">
