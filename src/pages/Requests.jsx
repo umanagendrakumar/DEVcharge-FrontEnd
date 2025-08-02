@@ -5,6 +5,7 @@ import { addRequests } from "../utils/store/requestsSlice";
 import UserCard from "../components/UserCard";
 import Empty from "../components/Empty";
 import { BASE_URL } from "../constants";
+import ShimmerLoading from "./ShimmerLoading";
 
 const Requests = () => {
 
@@ -27,7 +28,7 @@ const Requests = () => {
 
     const requests = useSelector((store) => store.requests);
 
-    if (!requests) return <h2>Loading Requests......</h2>
+    if (!requests) return <ShimmerLoading />
     if (requests.length === 0) return <Empty value={"Requests Received"}/>
     return (
         // To show recent requests first, change to flex-col-reverse

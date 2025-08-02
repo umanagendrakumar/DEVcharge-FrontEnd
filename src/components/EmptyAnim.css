@@ -1,0 +1,8 @@
+@keyframes astronautBounce {
+    0% { transform: translateY(0) scale(1); filter: drop-shadow(0 0 10px #48e0e4);}
+    50% { transform: translateY(-8px) scale(1.08); filter: drop-shadow(0 0 22px #48e0e4);}
+    100% { transform: translateY(0) scale(1); filter: drop-shadow(0 0 10px #48e0e4);}
+}
+.animate-astronaut {
+    animation: astronautBounce 1.5s infinite;
+}

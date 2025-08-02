@@ -6,6 +6,7 @@ import UserCard from "../components/UserCard";
 import Empty from "../components/Empty";
 import { BASE_URL } from "../constants";
 import { Link } from "react-router-dom";
+import ShimmerLoading from "./ShimmerLoading";
 
 const Connections = () => {
     const dispatch = useDispatch();
@@ -25,7 +26,7 @@ const Connections = () => {
         fetchConnections();
     }, [])
 
-    if (!connectionsData) return <h1>Fetching Connections....</h1>
+    if (!connectionsData) return <ShimmerLoading />
     if (connectionsData.length === 0) return <Empty value={"Connections"} />
     return (
         // To show recent connections first, change to flex-col-reverse

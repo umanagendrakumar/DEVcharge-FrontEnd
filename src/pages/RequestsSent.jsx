@@ -6,6 +6,7 @@ import { addRequestsSent } from "../utils/store/requestsSentSlice";
 import UserCard from "../components/UserCard";
 import Empty from "../components/Empty";
 import { BASE_URL } from "../constants";
+import ShimmerLoading from "./ShimmerLoading";
 
 const RequestsSent = () => {
 
@@ -27,7 +28,7 @@ const RequestsSent = () => {
 
     const requestsSent = useSelector((store) => store.requestsSent);
 
-    if (!requestsSent) return <h2>Loading Requests......</h2>;
+    if (!requestsSent) return <ShimmerLoading />
     if (requestsSent.length === 0) return <Empty value={"Requests Sent"}/>;
     return (
          <div className="w-full p-2 flex flex-col justify-center items-center">
