@@ -2,7 +2,7 @@ import "./ShimmerAnim.css"; // Only the animation
 
 const ShimmerLoading = () => {
     return (
-        <div className="w-full">
+        <div className="w-full p-4">
             {[...Array(5)].map((_, index) => (
                 <div key={index} className="flex gap-4 justify-center items-center mb-4">
 

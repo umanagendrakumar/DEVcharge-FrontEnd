@@ -12,7 +12,7 @@
         rgba(255,255,255,0) 60%
     );
     transform: translateX(-100%);
-    animation: shimmer 2.5s infinite;
+    animation: shimmer 1.5s infinite;
 }
 
 @keyframes shimmer {
