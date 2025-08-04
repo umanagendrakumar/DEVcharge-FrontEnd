@@ -15,6 +15,7 @@ import LandingPage from "./pages/LandingPage";
 import Chat from "./pages/Chat";
 
 import { PublicOnlyRoute } from "./Helpers";
+import ContactUs from "./pages/ContactUs";
 
 const App = () => {
     return (
@@ -39,6 +40,7 @@ const App = () => {
                         <Route path="/user/request/sent" element={<RequestsSent />}></Route>
                         <Route path="/user/ignoredProfiles" element={<IgnoredProfiles />}></Route>
                         <Route path="/chat/:targetUserId" element={<Chat />}></Route>
+                        <Route path="/contactUs" element={<ContactUs />}></Route>
                     </Route>
                 </Routes>
             </BrowserRouter>

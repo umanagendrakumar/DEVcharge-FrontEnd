@@ -15,7 +15,8 @@ const SideBar = ({ closeMenu }) => {
                 <li className={sideBarItem}><Link to="/user/connections">Connections</Link></li>
                 <li className={sideBarItem}><Link to="/user/requests">Requests Received</Link></li>
                 <li className={sideBarItem}><Link to="/user/request/sent">Requests Sent</Link></li>
-                <li className={`${sideBarItem} border-b`}><Link to="/user/ignoredProfiles">Ignored Profiles</Link></li>
+                <li className={sideBarItem}><Link to="/user/ignoredProfiles">Ignored Profiles</Link></li>
+                <li className={`${sideBarItem} border-b`}><Link to="/contactUs">Contact Us</Link></li>
             </ul>
 
         </aside>
