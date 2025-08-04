@@ -1,2 +1,7 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+::selection {
+  color: cyan;
+}
+
