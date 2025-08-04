@@ -6,7 +6,7 @@ import SideBar from "./SideBar";
 
 import { useSelector } from "react-redux";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { removeUser } from "../utils/store/userSlice";
 import { removeFeed } from "../utils/store/feedSlice";
@@ -71,9 +71,9 @@ const Header = () => {
 
 
 
-                    <h1 className="font-bold text-2xl sm:text-3xl mx-auto text-transparent bg-clip-text bg-gradient-to-r from-[#ffffff] via-[#00ccff] to-[#00fff7]">
+                    <Link to="/feed" className="font-bold text-2xl sm:text-3xl mx-auto text-transparent bg-clip-text bg-gradient-to-r from-[#ffffff] via-[#00ccff] to-[#00fff7]">
                         DevCharge
-                    </h1>
+                    </Link>
 
                     {
                         user && (<div className="flex gap-2 ">
