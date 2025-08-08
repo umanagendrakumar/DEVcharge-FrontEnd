@@ -117,7 +117,7 @@ const Login = () => {
 
 
             {
-                isNewUser || isPasswordForgot && (
+                (isNewUser || isPasswordForgot) && (
                     <div>
                         <h2 className="mt-4 text-sm">Confirm Password :</h2>
                         <input
