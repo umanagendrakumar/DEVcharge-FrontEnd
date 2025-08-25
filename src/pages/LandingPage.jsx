@@ -6,6 +6,7 @@ import DevChargeFlow from '../components/DevChargeFlow';
 import DevChargeFuture from '../components/DevChargeFuture';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import Footer from '../components/Footer';
 
 const LandingPage = () => {
     const navigate = useNavigate();
@@ -13,14 +14,17 @@ const LandingPage = () => {
 
     if (user) return navigate("/feed");
     return (
-        <div className='flex flex-col'>
-            <DevChargeIntro />
-            <DevChargeWhat />
-            <DevChargeWhy />
-            <DevChargeFlow />
-            <DevChargeFeatures />
-            <DevChargeFuture />
-        </div>
+        <>
+            <div className='flex flex-col'>
+                <DevChargeIntro />
+                <DevChargeWhat />
+                <DevChargeWhy />
+                <DevChargeFlow />
+                <DevChargeFeatures />
+                <DevChargeFuture />
+                <Footer />
+            </div>
+        </>
     );
 };
 
