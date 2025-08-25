@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const DevChargeFuture = () => {
   const improvements = [
-        { title: "DEVcharge Pro", description: "Reconnect with ignored profiles (because hey, maybe they’ve leveled up 👀)." },
+        { title: "Reconnect", description: "Reconnect with ignored profiles (because hey, maybe they’ve leveled up)." },
         { title: "Connection Cleanup", description: "Remove already connected users if things go stale." },
         { title: "AI Chatbot 🤖", description: "Your DEVcharge guide, answering everything from 'How to use?' to 'Why is my request ignored?'" },
     ];
@@ -14,7 +14,7 @@ const DevChargeFuture = () => {
                 Future Improvements
             </h2>
             <p className="text-gray-400 text-lg mb-12">
-                We’re just getting started. Here’s what’s charging next.
+                We’re just getting started. Here’s what’s charging next in DevCharge Pro.
             </p>
             <div className="grid md:grid-cols-3 gap-6">
                 {improvements.map((item, index) => (
