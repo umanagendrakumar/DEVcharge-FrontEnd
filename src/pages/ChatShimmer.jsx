@@ -24,14 +24,14 @@ const ChatShimmer = () => (
             {!isOutgoing && (
               <>
                 <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#23272f] to-[#11121a] animate-pulse" />
-                <div className={`bg-gradient-to-r from-[#23272f] via-[#3764f9] to-[#0edbff] h-8 ${bubbleWidth} rounded-lg animate-shimmer`} />
+                <div className={`bg-gradient-to-r from-[#23272f] via-[#192e72] to-[#176371] h-8 ${bubbleWidth} rounded-lg animate-shimmer`} />
               </>
             )}
 
             {/* Outgoing bubble: bubble left, avatar right */}
             {isOutgoing && (
               <>
-                <div className={`bg-gradient-to-r from-[#905ef2] via-[#3e68f2] to-[#03d9ff] h-8 ${bubbleWidth} rounded-lg animate-shimmer`} />
+                <div className={`bg-gradient-to-r from-[#4b3180] via-[#3e68f2] to-[#195e6a] h-8 ${bubbleWidth} rounded-lg animate-shimmer`} />
                 <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#23272f] to-[#11121a] animate-pulse" />
               </>
             )}
