@@ -1,9 +1,9 @@
 import { ArrowRight, Code2, Users, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const LandingHero = () => {
+const DevChargeIntro = () => {
     return (
-        <section>
+        <section className="">
             <div className="text-center">
                 <h1 className="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#ffffff] via-[#00ccff] to-[#00fff7]">
                     <span>Connect.</span>{" "}
@@ -16,13 +16,12 @@ const LandingHero = () => {
                 </p>
 
 
-                <Link to="/auth" className=" w-40 sm:w-50 bg-gradient-to-r from-[#9766fa] via-[#3764f9] to-[#0edbff] py-4 rounded flex items-center justify-center cursor-pointer mx-auto">
+                <Link to="/auth" className="w-40 sm:w-50 bg-gradient-to-r from-[#9766fa] via-[#3764f9] to-[#0edbff] py-4 rounded flex items-center justify-center cursor-pointer mx-auto">
                     GET STARTED
-                    <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                 </Link>
 
 
-                <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 mt-12 sm:mt-16 ">
+                <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12 ">
                     <div className="flex items-center gap-2">
                         <Code2 className="text-primary" />
                         <span>Developer-First</span>
@@ -41,4 +40,4 @@ const LandingHero = () => {
     );
 }
 
-export default LandingHero;
+export default DevChargeIntro;

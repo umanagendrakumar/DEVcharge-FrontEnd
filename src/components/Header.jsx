@@ -52,8 +52,8 @@ const Header = () => {
     }
 
     return (
-        <>
-            <header className=" bg-base-100 p-4 sticky top-0 h-20 flex items-center">
+    
+            <header className="bg-base-100 p-4 sticky top-0 h-20 flex items-center z-10">
                 <nav className="w-full flex justify-between items-center">
 
                     {isMenuOpen && <SideBar closeMenu={() => setIsMenuOpen(false)} />}
@@ -91,7 +91,7 @@ const Header = () => {
 
                 </nav>
             </header>
-        </>
+    
     );
 }
 export default Header;
