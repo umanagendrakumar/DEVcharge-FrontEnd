@@ -1,5 +1,5 @@
 import DevChargeIntro from '../components/DevChargeIntro';
-import DevchargeWhat from '../components/DevchargeWhat';
+import DevchargeWhat from '../components/DevChargeWhat';
 import DevChargeWhy from '../components/DevChargeWhy';
 import DevChargeFeatures from '../components/DevChargeFeatures';
 import DevChargeFlow from '../components/DevChargeFlow';
