@@ -6,6 +6,7 @@ import axios from "axios";
 import { useEffect } from "react";
 
 import { BASE_URL } from "../constants";
+import Footer from "./Footer";
 
 const Body = () => {
     const navigate = useNavigate();
@@ -42,6 +43,7 @@ const Body = () => {
             <main className="bg-black flex-1 flex justify-center items-center p-2">
                 <Outlet />
             </main>
+            <Footer />
         </div>
     );
 };
