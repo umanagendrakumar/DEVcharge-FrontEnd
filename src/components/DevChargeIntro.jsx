@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const DevChargeIntro = () => {
     return (
-        <section className="">
+        <section className="h-[calc(100svh-80px)] flex items-center justify-center">
             <div className="text-center">
                 <h1 className="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#ffffff] via-[#00ccff] to-[#00fff7]">
                     <span>Connect.</span>{" "}

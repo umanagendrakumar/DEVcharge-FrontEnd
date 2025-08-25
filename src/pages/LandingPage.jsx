@@ -1,4 +1,4 @@
-import DevChargeIntro from '../components/DevChargeintro';
+import DevChargeIntro from '../components/DevChargeIntro';
 import DevchargeWhat from '../components/DevchargeWhat';
 import DevChargeWhy from '../components/DevChargeWhy';
 import DevChargeFeatures from '../components/DevChargeFeatures';
@@ -13,7 +13,7 @@ const LandingPage = () => {
 
     if (user) return navigate("/feed");
     return (
-        <div className='flex flex-col gap-28 py-20 px-7'>
+        <div className='flex flex-col px-7'>
             <DevChargeIntro />
             <DevchargeWhat />
             <DevChargeWhy />
