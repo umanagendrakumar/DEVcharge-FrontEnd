@@ -173,7 +173,7 @@ const Login = () => {
                 !isPasswordForgot && (
                     <div className="text-right w-max ml-auto text-sm font-medium cursor-pointer"
                         onClick={setToggle}>
-                        {isNewUser ? "Already have an account" : "I'm a New User"}
+                        {isNewUser ? "I'm a Old Developer" : "I'm a New Developer"}
                     </div>
                 )
             }
