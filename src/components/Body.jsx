@@ -43,7 +43,6 @@ const Body = () => {
             <main className="bg-black flex-1 flex justify-center items-center p-2">
                 <Outlet />
             </main>
-            <Footer />
         </div>
     );
 };
