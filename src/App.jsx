@@ -11,7 +11,7 @@ import RequestsSent from "./pages/RequestsSent";
 import IgnoredProfiles from "./pages/IgnoredProfiles";
 import LandingPage from "./pages/LandingPage";
 import Chat from "./pages/Chat";
-import ContactUs from "./pages/ContactUs";
+import Feedback from "./pages/Feedback";
 
 const App = () => {
     return (
@@ -29,7 +29,7 @@ const App = () => {
                         <Route path="/user/request/sent" element={<RequestsSent />} />
                         <Route path="/user/ignoredProfiles" element={<IgnoredProfiles />} />
                         <Route path="/chat/:targetUserId" element={<Chat />} />
-                        <Route path="/contactUs" element={<ContactUs />} />
+                        <Route path="/feedback" element={<Feedback />} />
                     </Route>
                 </Routes>
             </BrowserRouter>
