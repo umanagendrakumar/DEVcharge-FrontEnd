@@ -20,6 +20,8 @@ const Login = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    const user = useSelector((state) => state.user);
+
     const handleLogin = async () => {
         setIsProcessing(true);
         try {
@@ -95,6 +97,8 @@ const Login = () => {
         setErrorMessage("");
         setIsPasswordForgot(true);
     }
+
+    if (user) return navigate("/feed");
 
     return (
         <div className=" rounded p-8 bg-black mx-auto w-full max-w-120">
