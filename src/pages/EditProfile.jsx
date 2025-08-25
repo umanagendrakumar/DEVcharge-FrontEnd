@@ -89,7 +89,7 @@ const EditProfile = ({ user }) => {
                         className="border mt-1 p-2 w-full focus:border-blue-500 focus:outline-none" />
                 </div>
                 <div className="mb-4">
-                    <h2 >PhotoURL :</h2>
+                    <h2 >PhotoURL : <span className="text-gray-400 italic">(paste your github photo url)</span></h2>
                     <input
                         type="text"
                         name="photoUrl"
