@@ -1,7 +1,7 @@
 import { Info, Rocket } from 'lucide-react';
 const DevChargeWhy = () => {
   return (
-    <section className="h-[calc(100svh-80px)] flex items-center justify-center">
+    <section className="my-10">
       <div className="max-w-6xl mx-auto px-4">
                   <h2 className="text-3xl md:text-5xl font-bold mb-10 text-center text-transparent bg-clip-text bg-gradient-to-r from-[#9766fa] to-[#3764f9]">
                       Why DevCharge?

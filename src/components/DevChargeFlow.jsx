@@ -13,7 +13,7 @@ const DevChargeFlow = () => {
         { title: "Feedback Page", description: "Tell us how we did 💬" },
     ];
   return (
-    <section className="my-20">
+    <section className="my-10">
       <div className="max-w-6xl mx-auto text-center px-4">
             <h2 className="text-3xl md:text-5xl font-bold mb-10 text-transparent bg-clip-text bg-gradient-to-r from-[#00ccff] to-[#00fff7]">
                 DevCharge Working Flow
