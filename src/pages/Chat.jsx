@@ -152,7 +152,7 @@ const Chat = () => {
                     value={newMessage}
                     onChange={(e) => setNewMessage(e.target.value)}
                     className="p-2 px-6 h-12 flex-1 outline-0 rounded-xl border border-gray-700 w-full"
-                    placeholder="Fuel your DevCharge, start typing…....." />
+                    placeholder="start CHARGing....." />
                 <button className="btn px-6 bg-gradient-to-r from-[#905ef2] via-[#3e68f2] to-[#03d9ff] rounded-xl h-12"
                     onClick={sendMessage}>Send</button>
             </footer>
