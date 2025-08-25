@@ -1,9 +1,9 @@
-import { Code2, Users, Zap } from "lucide-react";
+import { Code2, Users, Zap, CornerRightDown } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const DevChargeIntro = () => {
     return (
-        <section className="h-[calc(100svh-80px)] flex items-center justify-center">
+        <section className="h-[calc(100svh-80px)] flex flex-col items-center justify-center">
             <div className="text-center">
                 <h1 className="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#ffffff] via-[#00ccff] to-[#00fff7]">
                     <span>Connect.</span>{" "}
@@ -36,6 +36,7 @@ const DevChargeIntro = () => {
                     </div>
                 </div>
             </div>
+            <div className="mt-30 flex text-gray-600">Scroll to know more <CornerRightDown className="mt-2 text-gray-700"/></div>
         </section>
     );
 }
