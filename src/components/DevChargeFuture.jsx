@@ -1,10 +1,6 @@
-import React from 'react'
-import {
-
-    Rocket,
-
-} from 'lucide-react';
+import { Rocket } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
 const DevChargeFuture = () => {
   const improvements = [
         { title: "DEVcharge Pro", description: "Reconnect with ignored profiles (because hey, maybe they’ve leveled up 👀)." },

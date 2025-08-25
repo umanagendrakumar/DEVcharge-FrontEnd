@@ -1,17 +1,5 @@
-import React from 'react'
-import {
-    ArrowRight,
-    Code2,
-    Users,
-    Zap,
-    Info,
-    Rocket,
-    MessageCircleMore,
-    Link2,
-    ListTodo,
-    SlidersHorizontal // Changed from 'Switch' to resolve the import error
-} from 'lucide-react';
-const DevchargeWhy = () => {
+import { Info, Rocket } from 'lucide-react';
+const DevChargeWhy = () => {
   return (
     <section className="h-[calc(100svh-80px)] flex items-center justify-center">
       <div className="max-w-6xl mx-auto px-4">
@@ -61,4 +49,4 @@ const DevchargeWhy = () => {
   )
 }
 
-export default DevchargeWhy
+export default DevChargeWhy

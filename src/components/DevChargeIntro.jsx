@@ -1,4 +1,4 @@
-import { ArrowRight, Code2, Users, Zap } from "lucide-react";
+import { Code2, Users, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const DevChargeIntro = () => {

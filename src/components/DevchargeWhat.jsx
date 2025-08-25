@@ -1,4 +1,4 @@
-const DevchargeWhat = () => {
+const DevChargeWhat = () => {
   return (
     <section className="h-[calc(100svh-80px)] flex items-center justify-center">
       <div className="max-w-4xl mx-auto  md:p-12 ">
@@ -24,4 +24,4 @@ const DevchargeWhat = () => {
   );
 }
 
-export default DevchargeWhat;
+export default DevChargeWhat;
