@@ -52,8 +52,8 @@ const FeedCard = ({ user }) => {
                 <header className="my-2">
                     <h2 className="font-bold text-2xl">{firstName + " " + lastName}</h2>
                     {gender && age && <p className="text-sm mb-2 text-gray-400">{gender + ", " + age}</p>}
+                    <p className="text-sm italic text-gray-400">{about}</p>
                     {skills && <p className="mb-2">{skills.join(" | ")}</p>}
-                    <p className="text-sm italic">{about}</p>
                 </header>
                 <footer className="ml-4">
                     <button className=" rounded py-3 cursor-pointer w-25 border border-red-700 m-1"
