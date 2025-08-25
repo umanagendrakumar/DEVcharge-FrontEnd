@@ -31,7 +31,7 @@ const Feed = () => {
     if (!feed) return <ShimmerFeed />
     if (feed.length === 0) return <Empty value={"more Profile Cards"}/>
     return (
-        <div className=" w-full p-2 mx-4 flex flex-col justify-center items-center">
+        <div className=" w-full p-2 mx-1 flex flex-col justify-center items-center">
             <h1 className="text-2xl font-bold mb-4 border-b border-gray-500 p-2">F ee d</h1>
             <FeedCard user={feed[0]} />
         </div>
