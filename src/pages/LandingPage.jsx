@@ -13,7 +13,7 @@ const LandingPage = () => {
 
     if (user) return navigate("/feed");
     return (
-        <div className='flex flex-col px-7'>
+        <div className='flex flex-col'>
             <DevChargeIntro />
             <DevChargeWhat />
             <DevChargeWhy />

@@ -1,7 +1,7 @@
 const DevChargeWhat = () => {
   return (
     <section className="my-10">
-      <div className="max-w-4xl mx-auto  md:p-12 ">
+      <div className="max-w-4xl mx-auto px-4">
         <h2 className="text-3xl text-center md:text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#00fff7] to-[#00ccff]">
           What DevCharge?
         </h2>
