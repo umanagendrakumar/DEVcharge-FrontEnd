@@ -11,7 +11,6 @@ import RequestsSent from "./pages/RequestsSent";
 import IgnoredProfiles from "./pages/IgnoredProfiles";
 import LandingPage from "./pages/LandingPage";
 import Chat from "./pages/Chat";
-import { PublicOnlyRoute, PrivateRoute } from "./Helpers";
 import ContactUs from "./pages/ContactUs";
 
 const App = () => {
@@ -20,29 +19,17 @@ const App = () => {
             <BrowserRouter basename="/">
                 <Routes>
                     <Route path="/" element={<Body />}>
-                        {/* PUBLIC ROUTES */}
-                        <Route path="/" element={
-                            <PublicOnlyRoute>
-                                <LandingPage />
-                            </PublicOnlyRoute>
-                        } />
-                        <Route path="/auth" element={
-                            <PublicOnlyRoute>
-                                <Login />
-                            </PublicOnlyRoute>
-                        } />
-                        <Route path="/contactUs" element={<ContactUs />} />
 
-                        {/* PRIVATE ROUTES */}
-                        <Route element={<PrivateRoute />}>
-                            <Route path="/feed" element={<Feed />} />
-                            <Route path="/profile/edit" element={<Profile />} />
-                            <Route path="/user/connections" element={<Connections />} />
-                            <Route path="/user/requests" element={<Requests />} />
-                            <Route path="/user/request/sent" element={<RequestsSent />} />
-                            <Route path="/user/ignoredProfiles" element={<IgnoredProfiles />} />
-                            <Route path="/chat/:targetUserId" element={<Chat />} />
-                        </Route>
+                        <Route path="/" element={<LandingPage />} />
+                        <Route path="/auth" element={<Login />} />
+                        <Route path="/feed" element={<Feed />} />
+                        <Route path="/profile/edit" element={<Profile />} />
+                        <Route path="/user/connections" element={<Connections />} />
+                        <Route path="/user/requests" element={<Requests />} />
+                        <Route path="/user/request/sent" element={<RequestsSent />} />
+                        <Route path="/user/ignoredProfiles" element={<IgnoredProfiles />} />
+                        <Route path="/chat/:targetUserId" element={<Chat />} />
+                        <Route path="/contactUs" element={<ContactUs />} />
                     </Route>
                 </Routes>
             </BrowserRouter>

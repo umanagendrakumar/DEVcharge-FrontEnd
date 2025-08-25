@@ -39,7 +39,7 @@ const Header = () => {
                 dispatch(removeRequests());
                 dispatch(removeIgnoredProfiles());
                 return navigate("/");
-
+                
             }
             catch (err) {
                 console.log(err);
@@ -71,7 +71,7 @@ const Header = () => {
 
 
 
-                    <Link to="/feed" className="font-bold text-2xl sm:text-3xl mx-auto text-transparent bg-clip-text bg-gradient-to-r from-[#ffffff] via-[#00ccff] to-[#00fff7]">
+                    <Link to={user ? "/feed" : "/auth"} className="font-bold text-2xl sm:text-3xl mx-auto text-transparent bg-clip-text bg-gradient-to-r from-[#ffffff] via-[#00ccff] to-[#00fff7]">
                         DevCharge
                     </Link>
 
