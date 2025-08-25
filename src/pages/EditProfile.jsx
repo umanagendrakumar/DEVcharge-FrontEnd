@@ -85,6 +85,7 @@ const EditProfile = ({ user }) => {
                         name="gender"
                         value={gender}
                         onChange={(e) => setGender(e.target.value)}
+                        placeholder="Male/Female"
                         className="border mt-1 p-2 w-full focus:border-blue-500 focus:outline-none" />
                 </div>
                 <div className="mb-4">
