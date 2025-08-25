@@ -45,7 +45,7 @@ const FeedCard = ({ user }) => {
     return (
         <div className="p-[1px] rounded-xl bg-gradient-to-r from-[#ffffff] via-[#00ccff] to-[#00fff7] max-w-sm w-full">
             <article className=" bg-base-300 p-4 flex flex-col text-center">
-                <figure className=" w-45 h-45 rounded-full mx-auto my-4">
+                <figure className=" w-36 h-36 rounded-full mx-auto my-4">
                     <img src={photoUrl}
                         className="w-full h-full rounded-full" />
                 </figure>
