@@ -1,5 +1,5 @@
 import DevChargeIntro from '../components/DevChargeIntro';
-import DevchargeWhat from '../components/DevChargeWhat';
+import DevChargeWhat from '../components/DevChargeWhat';
 import DevChargeWhy from '../components/DevChargeWhy';
 import DevChargeFeatures from '../components/DevChargeFeatures';
 import DevChargeFlow from '../components/DevChargeFlow';
@@ -15,7 +15,7 @@ const LandingPage = () => {
     return (
         <div className='flex flex-col px-7'>
             <DevChargeIntro />
-            <DevchargeWhat />
+            <DevChargeWhat />
             <DevChargeWhy />
             <DevChargeFlow />
             <DevChargeFeatures />
