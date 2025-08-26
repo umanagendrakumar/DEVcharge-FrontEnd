@@ -39,7 +39,7 @@ const Login = () => {
             return navigate("/feed");
         }
         catch (err) {
-            setErrorMessage(err?.response?.data || "Something went wrong! Refresh page 2 times!!");
+            setErrorMessage(err?.response?.data || "CORS issue! Refresh page 2 times!!");
             setIsProcessing(false);
         }
     }
