@@ -15,12 +15,10 @@ const DevChargeFlow = () => {
   return (
     <section className="my-10">
       <div className="max-w-6xl mx-auto text-center px-1">
-            <h2 className="text-3xl md:text-5xl font-bold mb-10 text-transparent bg-clip-text bg-gradient-to-r from-[#00ccff] to-[#00fff7]">
+            <h2 className="text-3xl md:text-5xl font-bold mb-16 text-transparent bg-clip-text bg-gradient-to-r from-[#00ccff] to-[#00fff7]">
                 DevCharge Working Flow
             </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-12">
-                Picture a roadmap with arrows guiding you along the dev-journey. Simple roadmap, no spaghetti code.
-            </p>
+            
             <div className="relative flex flex-col items-center justify-center">
                 {steps.map((step, index) => (
                     <React.Fragment key={index}>
