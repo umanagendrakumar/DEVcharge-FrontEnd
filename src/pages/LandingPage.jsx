@@ -17,11 +17,11 @@ const LandingPage = () => {
         <>
             <div className='flex flex-col'>
                 <DevChargeIntro />
-                <DevChargeWhat />
-                <DevChargeWhy />
+                {/* <DevChargeWhat /> */}
+                {/* <DevChargeWhy /> */}
                 <DevChargeFlow />
                 <DevChargeFeatures />
-                <DevChargeFuture />
+                {/* <DevChargeFuture /> */}
                 <Footer />
             </div>
         </>

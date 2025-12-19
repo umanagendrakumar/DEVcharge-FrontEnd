@@ -36,7 +36,7 @@ const DevChargeIntro = () => {
                     </div>
                 </div>
             </div>
-            <div className="mt-10 flex text-gray-600">Scroll to CHARGE more <CornerRightDown className="mt-2 text-gray-700"/></div>
+            {/* <div className="mt-10 flex text-gray-600">Scroll to CHARGE more <CornerRightDown className="mt-2 text-gray-700"/></div> */}
         </section>
     );
 }
